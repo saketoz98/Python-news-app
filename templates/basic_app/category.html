@@ -1,0 +1,51 @@
+{% extends "basic_app/base.html" %}
+{% block styles %}
+a:link{
+  color:#FCB383;
+}
+a:hover{
+  text-decoration:none;
+  color:#F6721A ;
+}
+.mynews{
+  background-color: #E8E5E3;
+  padding:5px;
+}
+.mynews:hover{
+  border: 1px solid #BFBFBF;
+  background-color: white;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.jumbotron{
+  text-align:center;
+}
+{% endblock %}
+  {% block body_block %}
+  <div class="jumbotron" >
+    <h1 class="display-4">News from {{address}} World</h1>
+    <p class="lead">Enjoy reading {{address}} news from {{country}}</p>
+  </div>
+  <div class="container">
+  <div>
+      <div class="row">
+        {% for news in all_news.articles %}
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <div class="border rounded mynews" >
+            <img src="{{news.urlToImage}}" alt="Image"  class="img-fluid z-depth-4 rounded" width="100%">
+            <h3>{{news.title}}</h3>
+            <p>{{news.description}}</p>
+            <a href="{{news.url}}">Read More</a>
+          </div>
+        </div>
+          {% if forloop.counter|divisibleby:2 %}
+    </div>
+    <br>
+
+    <div class="row">
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

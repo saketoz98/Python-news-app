@@ -1,0 +1,22 @@
+body{
+  font-family: 'Roboto Slab', serif;
+}
+a.readMore{
+  text-decoration: none;
+  color: black;
+}
+.carouselLink{
+  text-decoration: none;
+  color:#E3DDD8    ;
+}
+.carouselLink:hover{
+  text-decoration: none;
+  color:#E3DDD8    ;
+  font-size: 40px;
+}
+.myclass{
+  background-color: #B7B5B4  ;
+}
+.nav-item:hover{
+  color:white;
+}

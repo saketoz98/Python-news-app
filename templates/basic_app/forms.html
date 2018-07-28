@@ -1,0 +1,34 @@
+{% extends "basic_app/base.html" %}
+{% block styles %}
+.myForm{
+  padding:20px;
+}
+p{
+  padding-right:10px;
+}
+{% endblock %}
+  {% block body_block %}
+  <div class="container">
+    <div class="formClass myForm">
+      <form  action="{% url 'basic_app:form'%}" method="post" class=" justify-content-center">
+        {% csrf_token %}
+        <div class="form-group row">
+          {% csrf_token %}
+          <p>Choose category</p>
+          {{form.category}}
+        </div>
+        <div class="form-group row">
+          <p>Choose Country   </p>
+          {{form.country}}
+
+        </div>
+        <div class="form-group row">
+          <input type="submit" value="Submit" class="btn btn-success">
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  {% endblock %}
